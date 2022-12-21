@@ -1,0 +1,11 @@
+-pourquoi debian ? difference entre aptitude et apt ? ce qu'est SELinux ou AppArmor ?
+	-> comprendre pourquoi cette OS
+-crer un nouveau compte SSH
+	-> comprendre comment ca fonctionne
+-modifier le hostname
+-creation d'un nouvel user et l'assiner a un group
+-expliquer le fonctionnement du script, l'interrompre sans le modif, regarder cron
+
+BONUS:
+-expliquer si choici de rajouter un service pourquoi
+
