@@ -1,22 +1,4 @@
 -retourner une signature.txt
--utiliser debian
--crer 2 partitions crypter -> lsblk
--ssh sure port 4242 seulement
--pare feu UFW, que le port 4242 ouvert
--pare feu actif lancement VM
--hostname = ccoste42
--tout les mdp strong policy
-	-expire tout les 30 jours
-	-pouvoir changer mdp que tout les deux jours
-	-user recois un warnings messages 7 jours avant mdp expire
-	-minimum 10 caracteres
-	-une majuscule mini
-	-une minuscule mini
-	-un chiffre mini
-	-pas 3 fois le meme caractere consecutifs
-	-pas inclure le nom d'utilisateur
-	-(ne s'applique pas au mdp root) le mdp doit comporter au moins 7 caracteres pas present dans l'ancien mdp
-	-mdp root doit avoir aussi strong policy
 -apres avoirs parametrer fichiers configurations changer tout les mdp de la machine meme le root
 -configurer sudo strong
 	-L'authentification par sudo doit être limitée à 3 tentatives en cas de mot de passe erroné
@@ -42,7 +24,6 @@
 		-Le nombre de commandes exécutées avec le programme sudo
 		
 BONUS:
--configurer les partitions comme image dans le sujet
 -Configurez un site Web WordPress fonctionnel avec les services suivants : lighttpd, MariaDB et PHP
 -Mettre en place un service de votre choix que vous jugez utile (NGINX / Apache2 excluded!)
 -Pour compléter la partie bonus, vous avez la possibilité de mettre en place des services supplémentaires. Dans ce cas, vous pouvez ouvrir plus de ports en fonction de vos besoins. Bien sûr, l'UFW/parefeu regle adapter en consequence

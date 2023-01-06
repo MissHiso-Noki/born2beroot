@@ -1,0 +1,22 @@
+-utiliser debian
+-hostname = ccoste42
+-crer 2 partitions crypter -> lsblk
+-installer git/vim/sudo
+-port 4242
+-pare feu UFW, que le port 4242 ouvert
+-pare feu actif lancement VM
+-tout les mdp strong policy
+	-minimum 10 caracteres ok
+	-une majuscule mini ok
+	-une minuscule mini ok
+	-un chiffre mini ok
+	-pas 3 fois le meme caractere consecutifs ok
+	-pas inclure le nom d'utilisateur ok
+	-(ne s'applique pas au mdp root) le mdp doit comporter au moins 7 caracteres pas present dans l'ancien mdp
+	-mdp root doit avoir aussi strong policy
+	-expire tout les 30 jours
+	-pouvoir changer mdp que tout les deux jours
+	-user recois un warnings messages 7 jours avant mdp expire
+BONUS:
+-configurer les partitions comme image dans le sujet
+
