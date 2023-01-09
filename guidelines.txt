@@ -1,27 +1,5 @@
 -retourner une signature.txt
 -apres avoirs parametrer fichiers configurations changer tout les mdp de la machine meme le root
--configurer sudo strong
-	-L'authentification par sudo doit être limitée à 3 tentatives en cas de mot de passe erroné
-	-Un message personnalisé de votre choix doit être affiché si une erreur due à un mot de passe erroné se produit lors de 		l'utilisation de sudo.
-	-Chaque action utilisant sudo doit être archivée, à la fois les entrées et les sorties. Le fichier journal doit être enregistré 		dans le /var/log/sudo/
-	-mod TTY activer pour securiter
-	-Pour des raisons de sécurité également, les chemins pouvant être utilisés par sudo doivent être restreints.
-		-> /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
--crer script appeler monitoring.sh developper en bash
--au demarrage de la machine le scrit doit affichers des informations sur tou les terminaux toutes les 10minutes, bannieres facultatives, aucune erreurs doit etre visible
-	-> doit afficher :
-		-L'architecture de votre système d'exploitation et sa version du noyau
-		-Le nombre de processeurs physiques
-		-Le nombre de processeurs virtuels
-		-La RAM actuellement disponible sur votre serveur et son taux d'utilisation en pourcentage
-		-La mémoire actuellement disponible sur votre serveur et son taux d'utilisation en pourcentage
-		-Le taux d'utilisation actuel de vos processeurs en pourcentage
-		-La date et l'heure du dernier redémarrage
-		-Que LVM soit actif ou non
-		-Le nombre de connexions actives
-		-Le nombre d'utilisateurs utilisant le serveur
-		-L'adresse IPv4 de votre serveur et son adresse MAC (Media Access Control)
-		-Le nombre de commandes exécutées avec le programme sudo
 		
 BONUS:
 -Configurez un site Web WordPress fonctionnel avec les services suivants : lighttpd, MariaDB et PHP
