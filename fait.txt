@@ -42,4 +42,5 @@
 	
 BONUS:
 -configurer les partitions comme image dans le sujet
+-Configurez un site Web WordPress fonctionnel avec les services suivants : lighttpd, MariaDB et PHP
 

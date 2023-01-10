@@ -2,7 +2,5 @@
 -apres avoirs parametrer fichiers configurations changer tout les mdp de la machine meme le root
 		
 BONUS:
--Configurez un site Web WordPress fonctionnel avec les services suivants : lighttpd, MariaDB et PHP
 -Mettre en place un service de votre choix que vous jugez utile (NGINX / Apache2 excluded!)
 -Pour compléter la partie bonus, vous avez la possibilité de mettre en place des services supplémentaires. Dans ce cas, vous pouvez ouvrir plus de ports en fonction de vos besoins. Bien sûr, l'UFW/parefeu regle adapter en consequence
--La partie bonus ne sera évaluée que si la partie obligatoire est PARFAITE. Parfait signifie que la partie obligatoire a été entièrement réalisée et fonctionne sans dysfonctionnement. Si vous n'avez pas satisfait à TOUTES les exigences obligatoires, votre partie bonus ne sera pas du tout évaluée

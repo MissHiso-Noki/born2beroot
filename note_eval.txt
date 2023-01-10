@@ -1,0 +1,194 @@
+Qu'est ce que une Machine Virtuelle :
+
+	-Une Machine virtuel permet d'executer virtuellement des OS ou des applications sur une machine physique
+	, ce aui peut servir a optimiser la charge d'utilisation de machines physiques (pour les serveur par exemple),
+	faire des test critique / casser l'OS sans incidence sur l'Os de l'hote.
+
+_______________________________________________________________________________________________________________________
+
+Pourquoi Debian et pas CentOS ou Rocky ?
+
+	-Parce que le sujets conseille Debian entre CentOS et Debian (ancient subject)
+	-Parce que j'ai commencer avec Debian etle sujets a changer alors que j'avait deja commencer.
+		-commande :
+							-uname -a : affiche le nom de l'OS utiliser.
+
+_______________________________________________________________________________________________________________________
+
+Qu'est ce que SSH ?
+
+	-SSH (Secure shell) est a la fois un programme et un protocole de communication, generalement utilise
+	pour ouvrir un shell dans un hote distant et communiquer de maniere cryptee avec cet hote au sein d'un
+	environnement non/peu securise.
+		-commande	:
+							-service ssh status : montre le status du service ssh.
+							-/etc/ssh/sshd_config
+							-ssh <user>@127.0.0.1 -p 4240 : ce connecter a la machine avec <user> depuis un terminal via le port 4240.
+
+_______________________________________________________________________________________________________________________
+
+APT et Aptitude :
+
+	-APT est un gestionnaire de libraries qui va permetre d'installer/supprimer tres simplement des paquets (Archive
+	contenant les fichiers, information et procedures necessaire a l'installation du logiciel sur un OS), APT est natif
+	a Debian.
+		-commande	: 
+							-apt : regroupe de maniere simplifie apt-getet apt-cache (commande de basse)
+							-dpkg -l : affiche tout les package (commande du logiciel dpkg sur lequelle la construction APT est baser)
+							-apt[-get] update : rechercher quels packages/dependances sont a jour.
+							-apt[-get] upgrade : installe les mises a jour identifiees par apt update si cela est possible.
+							-apt[-get] full-upgrade : comme upgrade mais s'autorise a supprimer des packages si necessaire 
+								pour mettre a jour l'ensemble.
+							-apt[-get] install <package_name> : installe le package a partir de son depot.
+							-apt[-cache] show <package_name> : montre un resume des informations sur le package.
+							-apt[-cache] policy <package_name> : pour voir de quel depot provient un package.
+							-apt list --installed: liste tous les packages installes.
+							-apt[-get] remove <package_name>: desinstalle un package sans supprimer ses fichiers de configuration.
+							-apt[-get] purge <package_name>: desinstalle et supprime les fichiers de configuration du package.
+							-apt[-get] autoremove: desinstalle les dependances de ce package qui ne sont plus requises une fois
+								le package desisntalle.
+
+	-Aptitude est une surcouche encore plus haut niveau qu'APT, qui propose notamment une interface semi-graphique.
+
+_______________________________________________________________________________________________________________________
+
+App-Armor :
+
+	-AppArmor ("Application Armor") est un logiciel libre de sécurité pour Linux. AppArmor permet à l'administrateur
+	système d'associer à chaque programme un profil de sécurité qui restreint les capacités de celui-ci.
+		-commande	:
+							-aa-status : affiche le status de AppArmor.
+							systemctl status apparmor : verifier que Apparmor s'execute bien au demarage.
+
+_______________________________________________________________________________________________________________________
+
+UFW (Uncomplcated Firewall):
+
+	-UFW est un programme qui sert a gerer un pare-feu netfilter. Il s'utilise via ligne de commande.
+	il va nous permetre de gerer les ouverture et fermeture des ports.
+		-commande	:
+							-ufw enable : Active ufw a chaque demarrage de la machine.
+							-ufw allow <port> : Autorisation des connexion sur ces port.
+							-ufw status : Verifie les regles
+							-service ufw status : montre le status du service ufw.
+							-ufw delete <NUM/RULE> : supprimer une regle.
+
+_______________________________________________________________________________________________________________________
+
+LVM (Logical Volume Manager) :
+
+	-LVM permet la création et la gestion de volumes logiques sous Linux. L'utilisation de volumes logiques remplace en
+	quelque sorte le partitionnement des disques. C'est un système beaucoup plus souple, qui permet par exemple de
+	diminuer la taille d'un système de fichier pour pouvoir en agrandir un autre, sans se préoccuper de leur emplacement
+	sur le disque. Il permet notamment de redimensionner les partitions de disques sans reformatage. Il permet également
+	de rajouter des disques à la volée.
+		-commande	:
+							-lsblk : checker le partitionnement logique du disque.
+
+_______________________________________________________________________________________________________________________
+
+Sudo :
+
+	-sudo est une commande qui permet à un administrateur système d'accorder à certains utilisateurs (ou groupes
+	d'utilisateurs) la possibilité de lancer une commande en tant qu'administrateur, ou en tant qu'autre utilisateur,
+	tout en conservant une trace des commandes saisies et des arguments. Pour executer sudo, il faut faire partie des
+	sudoers : Les utilisateurs ou groupes appartenent au groupe sudo.
+		-commande	:
+							-sudo : commande de base de sudo.
+							-su : permet de se logger en superuser ou 'root', possedant tous les droits d'administration possibles.
+							-getent group | grep sudo : affiche tout les utilisateur appartenent au groupe sudo.
+							-sudo vim /etc/sudoers.d/sudoconfig : affiche les regles lier a sudo.
+							-sudoreplay -d <iolog_dir> <iolog_file du log que l'on veut voir> : replay une commade executer avec sudo.
+
+_______________________________________________________________________________________________________________________
+
+cron :
+
+	-cron est un programme qui permet aux utilisateurs des systèmes Unix d’exécuter automatiquement des scripts,
+	des commandes ou des logiciels à une date et une heure spécifiée à l’avance, ou selon un cycle défini à l’avance.
+		-commande	:
+							-crontab -l : montre les tache effecuter pour utilisateur utillisant la commande.
+							-crontab -u <user> -e : ouvre le fichier permettant de configurer le script a executer. 
+
+_______________________________________________________________________________________________________________________
+
+Les Users :
+
+		-commande	:
+							-adduser <new_user> : creer un nouveau utilisateur.
+							-deluser --remove-home <user> : supprime l'utilisateur <user>.
+							-addgroup/delgroup <group> : creer/supprime un groupe.
+							-adduser <user> <group> : ajouter <user> au groupe <group>.
+							-deluser <user> <group> : supprime <user> du groupe <group>.
+							-hostnamectl -set-hostname <new_name> : change le hostname.
+							-cat /etc/login.defs
+							-cat /etc/pam.d/comon-password
+Supraliminal47
+_______________________________________________________________________________________________________________________
+
+Scrips :
+
+"
+arch_os=$(uname -a)
+pcpu=$(grep "physical id" /proc/cpuinfo | uniq | wc -l)
+vcpu=$(grep "processor" /proc/cpuinfo | wc -l)
+amu=$(free -m | awk '$1 == "Mem:" {printf "%ld/%ld", $3, $2}')
+pmu=$(free | awk '$1 == "Mem:" {printf "%.2f", $3/$2*100}')
+udu=$(df -BM --total -x tmpfs | grep total | awk '{print $3-M}')
+tdu=$(df -BG --total -x tmpfs | grep total | awk '{print $2}')
+pdu=$(df --total -x tmpfs | grep total | awk '{print $5}')
+cpul=$(top -bn1 | grep Cpu | awk '{printf "%.1f", $2+$4}')
+lstb=$(who -b | awk '{print $3" "$4}')
+lvmp=$(lsblk | grep lvm | wc -l)
+lvmu=$(if [ $lvmp -eq 0 ]; then echo no; else echo yes; fi)
+tcpc=$(ss -t | grep ESTAB | wc -l)
+user=$(users | wc -w)
+ip=$(hostname -I)
+mac=$(ip link show | grep link/ether | awk '{print $2}')
+sudocmd=$(cat /var/log/auth.log | grep -a sudo | wc -l)
+
+wall "	#Architecture : $arch_os
+	#CPU physical : $pcpu
+	#vCPU : $vcpu
+	#Memory Usage : ${amu}MB ($pmu%)
+	#Disk Usage : $udu/$tdu ($pdu)
+	#CPU load : $cpul%
+	#Last boot : $lstb
+	#LVM use : $lvmu
+	#Connections TCP : $tcpc ESTABLISHED
+	#User log : $user
+	#Network : IP $ip ($mac)
+	#Sudo : $sudocmd cmd"
+"
+		-commande	:
+							-uname -a : affiche toutes les informations systeme.
+							-grep <file> : cherche une correspondance dans le fichier specifier.
+							-uniq : n'affiche qu'une fois les ligne identique.
+							-free [-m] : affiche les infos memoire ([-m] affiche les infos en mebibyte).
+							-df (disk free) : affiche les info espace disque.
+							-top -bn1 : affiche les informations de performances a l'instant t.
+							-who : affiche des infos de logging et de boot.
+							-lsblk : affiche la table de partitionnement.
+							-ss -t : affiche les connexions TCP.
+							-users : affiche les utilisateurs logges.
+							-ip link show : affiche les info ip.
+
+_______________________________________________________________________________________________________________________
+
+Web serveur :
+
+	-PHP est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via
+	un serveur HTTP.
+
+	-WordPress est un système de gestion de contenu,soit un programme permettant de créer un site internet, un blogue
+	ou encore un site de vente en ligne.
+
+	-Mariadb est une databases, unendroit ou stocker des donner que l'on peut facile recuperer.
+
+		-commande	:
+							-mysql -u root : entrer dans MariaDB en tant que root.
+							-SHOW DATABASES; : montre les DATABASES active.
+
+	-lighttpd est un logiciel de serveur Web (ou HTTP) sécurisé, rapide et flexible. 
+
+_______________________________________________________________________________________________________________________
